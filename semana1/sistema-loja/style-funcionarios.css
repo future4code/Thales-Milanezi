@@ -1,0 +1,12 @@
+h1{
+color: blue;
+}
+.teste{
+  border: solid;
+  display: inline;
+}
+.rodape {
+    text-align: center;
+    color: black;
+    background-color: lightgray;
+}

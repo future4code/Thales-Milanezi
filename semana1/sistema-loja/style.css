@@ -1,0 +1,33 @@
+.estilo-menu{
+background-color:lightblue;
+color: blue;
+}
+.div-do-menu{
+background-color:gray;
+
+}
+.subtitulo{
+    text-align: center;
+
+}
+.principal{
+text-align: center;
+color: blue;
+padding: 5px;
+border: 1px solid black;
+
+}
+.imagem-principal{
+    text-align: center;
+}
+a:visited{
+color: white;    
+}
+a:hover{
+    color: white;
+}
+.rodape {
+    text-align: center;
+    color: black;
+    background-color: lightgray;
+}

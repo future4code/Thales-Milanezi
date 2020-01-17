@@ -1,0 +1,27 @@
+h1 {
+    color: blue;
+    padding: 5px;
+    border-radius: 2px;
+}
+.centralizado{
+    text-align: center;
+ }
+.quadrados{
+    border: 5px solid black;
+ }
+ span{
+     padding: 100px;
+ }
+ .caixas{
+     text-align: center;
+     display: inline-block;
+     margin: 5px;
+     border: solid 1px;
+     padding: 5px;
+
+ }
+ .rodape {
+    text-align: center;
+    color: black;
+    background-color: lightgray;
+}

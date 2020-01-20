@@ -96,7 +96,9 @@ div>p:first-child {
   *  ESTILOS COMPRAR 
   *
   **/
-
+*{
+    font-family: 'Roboto', sans-serif;
+}
 div:nth-child(2),
 div:last-child {
     text-align: center;

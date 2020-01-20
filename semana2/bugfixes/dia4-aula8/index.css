@@ -156,3 +156,6 @@ td button:hover {
 .borda-botao{
     border-style: outset;
 }
+.posicao{
+    text-align: center;
+}

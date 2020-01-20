@@ -126,10 +126,11 @@ td button:hover {
 .container-do-search {
     margin-top: 20px;
     height: 100px;
+    
 }
 
 .container-do-search img:hover {
-    opacity: 100%;
+    opacity: 60%;
 }
 
 .container-do-search img:active {
@@ -149,4 +150,7 @@ td button:hover {
 
 #back-button:hover {
     background-color: #635a3d;
+}
+.borda-botao{
+    border-style: outset;
 }

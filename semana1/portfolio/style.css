@@ -1,0 +1,34 @@
+h1{
+    padding: 10px;
+    margin: 0px;
+    border: 1px solid black;
+    background-color: lightblue;
+    text-align: center;
+    font-family: 'Fruktur', cursive;
+}
+.fundototal{
+    background-color: lightcyan;
+}
+
+.posicao-texto-centro{
+    font-family: 'Fruktur', cursive;
+    display: inline-block;
+    width: 20%;
+    margin: 5px 300px;
+
+}
+.posicao-texto-direita{
+    font-family: 'Fruktur', cursive;
+    display: inline-block;
+    width: 20%;
+    padding: 5px;
+    margin: 5px 100px;
+}
+p{
+    font-family: 'Gayathri', sans-serif;
+}
+.imagem{
+    width: 100%;
+    text-align: center;
+    
+}

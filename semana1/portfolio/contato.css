@@ -1,0 +1,18 @@
+.caixa-de-contato{
+font-family: 'Fruktur', cursive;
+text-align: center;
+border-radius: 10px;
+background-color: navy;
+font-size: 20px;
+color: white;
+}
+.espaco-div{
+    padding: 30px;
+}
+.titulo{
+    text-align: center;
+    color: black;
+}
+.fundo{
+    background-color: lightblue;
+}

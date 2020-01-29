@@ -1,0 +1,14 @@
+.font-size{
+    font-family: 'Fruktur', cursive;
+    font-size: 40px;
+}
+h1{
+    text-align: center;
+
+}
+.fundo{
+    background-color:lightblue;
+}
+.centralizar{
+    text-align: center;
+}

@@ -1,0 +1,17 @@
+.configText {
+    color: black;
+    font-size: 30px;
+    border-right: 6px dotted black;
+    height: 500px;
+}
+#head-container{
+    text-align: center;
+    padding: 20px;;
+}
+#main-container{
+    padding-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}

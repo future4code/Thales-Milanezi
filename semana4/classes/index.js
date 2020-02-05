@@ -17,5 +17,7 @@ function imprimirPost(){
         arrayPost.push(publicar)
 
         console.log(arrayPost)
-
+        document.getElementById("titulos").value = ""
+        document.getElementById("autores").value = ""
+        document.getElementById("areadotexto").value = ""
     }

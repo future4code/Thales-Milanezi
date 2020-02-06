@@ -1,0 +1,30 @@
+#Controlador-de-Despesa {
+    border: 2px solid orange;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+
+}
+button{
+    margin: 10px;
+}
+
+#Despesa {
+    border: 2px solid orange;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+#Extrato {
+    border: 2px solid orange;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+.menu-select{
+    margin: 5px;
+    
+}

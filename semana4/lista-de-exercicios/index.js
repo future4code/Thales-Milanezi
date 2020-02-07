@@ -135,3 +135,24 @@ const funcaoNaonomeada = () => {
 
 
 // EXERCÍCIOS DE OBJETOS
+
+// EXERCICIO -------- 1---------
+/* Arrays são listas que guardam informações e são otimos para acessar essas informações depois
+Objetos são estruturas que conseguem guardar uma volume maior de informações e mais complexas tambem, 
+com isso ele possuem uma estrutura de chaves e valores que permite "entiquetar" as variaveis .
+*/
+// EXERCICIO -------- 2---------
+/*
+function criaRetangulo(lado1, lado2){}
+    return
+    */
+// EXERCICIO -------- 3 ---------
+/* INCOMPLETA
+const filmeFavorito = {
+    titulo: "A volta da lagoa azul 13 - Hora do lago final", 
+    anos: "2022" ,
+    diretor: "spilberg",
+    atores: "brad pitty","Angelina Jolie","Tom Cruise","Adam Sandler","Drew Barrymore"
+}
+console.log("Venha assistir ao filme"+ titulo+"dirigido")
+*/

@@ -38,7 +38,7 @@ no segundo console.log ele vai imprimrir somente os numeros negativos ou seja o 
 */
 
 
-//  EXERCÍCIOS DE LOGICA DE PROGRAMAÇÃO
+//  EXERCÍCIOS DE LÓGICA DE PROGRAMAÇÃO
 
 
 // Exercício 1
@@ -50,3 +50,12 @@ const frutas = ["banana","maça","laranja","uva","abacaxi"]
       console.log(quitanda)
   }
   */
+
+  //Exercício 2
+
+/*      A-) False
+        B-) false
+        C-) True
+        D-) True
+        E-) True
+*/

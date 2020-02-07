@@ -1,4 +1,7 @@
-/* Exercícios de interpretação de código
+//EXERCÍCIOS DE INTERPRETAÇÃO DE CÓDIGO
+
+
+/* 
 1-) A função do exercício 1 realiza a conversão de moeda para dolares.
 Então foi feito uma função em que o usuário recebe uma caixa de texto pelo comando prompt
 e o usuário deve digitar um valor da cotação do dolar e esse valor tem que ser numérico
@@ -32,9 +35,18 @@ no segundo if o numero tem que ser maior que o numero2 para que numero2 seja igu
 No Primeiro console.log ele tem que imprimir todos os numeros porque todos os numeros são menores que infinitos nesse array
 no segundo console.log ele vai imprimrir somente os numeros negativos ou seja o -10
 
-
-
-
-
-
 */
+
+
+//  EXERCÍCIOS DE LOGICA DE PROGRAMAÇÃO
+
+
+// Exercício 1
+// Para percorrer um Array por ser utlizado o While, o For, o For... of... e  
+/* Esse codigo vai mostrar as frutas com indice menor que 3, o 3 não entra  
+const frutas = ["banana","maça","laranja","uva","abacaxi"]
+  for( let numeroFrutas = 0; numeroFrutas < 3; numeroFrutas++){
+      const quitanda = frutas[numeroFrutas]
+      console.log(quitanda)
+  }
+  */

@@ -89,6 +89,7 @@ const trigonometria = (a, b, c) =>{
 console.log(trigonometria(4,1,2))
 */
 // EXERCÍCIO 5
+/*
 const comparacao = (a , b) =>{
  
     if(a > b){
@@ -105,15 +106,32 @@ const comparacao = (a , b) =>{
     console.log(sub)
 }
 console.log(comparacao(12,22))
+*/
+
+
+
+//  EXERCÍCIOS DE FUNÇÃO
+
+
+
+//Exercício ------ 1 --------
 
 //12,54,64,24,64,76,9,71,12,2,20
-//  EXERCÍCIOS DE FUNÇÃO
-/*const arraydeNumeros = [12,54,64,24,64,76,9,71,12,2,20]
-
-function maiorMenor ([arraydeNumeros]){
-    for(let i=0; i < arraydeNumeros; i++){ 
-        if( )
+/*const arraydeNumeros = ([12,54,64,24,64,76,9,71,12,2,20]) => {
+    for(let i=0 ; i < arraydeNumeros; i++){ 
+        console.log("o que ta acontecendo aqui?")
     }
-    
+ESTÁ ERRADO
 }
 */
+//Exercício ------ 2 --------
+/*
+const funcaoNaonomeada = () => {
+    alert ("Hello future 4")
+}
+ const invocar = funcaoNaonomeada
+ console.log(invocar)
+*/
+
+
+// EXERCÍCIOS DE OBJETOS

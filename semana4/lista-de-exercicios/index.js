@@ -88,3 +88,32 @@ const trigonometria = (a, b, c) =>{
 }
 console.log(trigonometria(4,1,2))
 */
+// EXERCÍCIO 5
+const comparacao = (a , b) =>{
+ 
+    if(a > b){
+        console.log(a + "é maior que " + b)
+    } else{
+        console.log(b + "é maior que " + a)
+    }
+        if(a % b ===0){
+        console.log(a + " é divisivel por " + b)
+    } else {
+        console.log(a + " não é divisivel por " + b)
+    }
+    const sub = (a - b)
+    console.log(sub)
+}
+console.log(comparacao(12,22))
+
+//12,54,64,24,64,76,9,71,12,2,20
+//  EXERCÍCIOS DE FUNÇÃO
+/*const arraydeNumeros = [12,54,64,24,64,76,9,71,12,2,20]
+
+function maiorMenor ([arraydeNumeros]){
+    for(let i=0; i < arraydeNumeros; i++){ 
+        if( )
+    }
+    
+}
+*/

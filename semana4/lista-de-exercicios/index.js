@@ -23,7 +23,14 @@ o primeiro console.log vai imprimir a quantidade de itens que tem no array com o
 o segundo vai imprimir a quantidade de itens no array1 tambem utilizando o length (6)
 o terceiro vai imprimir a quantidade de itens no array2 tambem utilizando o length (8)
 
-
+4-)O exercicio 4 é um exercicio para verificar se um numero é maior ou menor que outro
+Foi criado um Array com diversos numeros aleatorios imagino e tambem duas variasveiz a numero1 que recebe infinito ou seja nenhum numero é maior que que ele
+e a variavel numero 2 que qualquer numero positivo é maior que ele
+Foi feito um For para percorrer o array e 2 if para verificar condições
+no primeiro if ele quer que todo numero menor que o infinito  o numero1 é igual a constante numero
+no segundo if o numero tem que ser maior que o numero2 para que numero2 seja igual a numero
+No Primeiro console.log ele tem que imprimir todos os numeros porque todos os numeros são menores que infinitos nesse array
+no segundo console.log ele vai imprimrir somente os numeros negativos ou seja o -10
 
 
 

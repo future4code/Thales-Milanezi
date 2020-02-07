@@ -14,6 +14,15 @@ logo apos a função foi feito 2 nosvas constantes para serem impresas no consol
 O novoMontante será com o valor de 165
 o segundoMontante será com o valor default porque não existe o case tesouro direto
 
+3-) O exercício 3 é um exercicio de criar novos  arrays e isso é feito pelo comando push verificando
+se o numero é par vau para o array 1 e se é impar vai para o array 2
+Primeiro é criado um array com 14 numeros e depois mais dois arrays sem valores dentro porque será adicionado depois
+utilizando o For para percorrer pelo array numeros ele vai verificar se os são pares e impares.
+SE for par vai para o array1 se não for vai para o array2
+o primeiro console.log vai imprimir a quantidade de itens que tem no array com o comando.length (14)
+o segundo vai imprimir a quantidade de itens no array1 tambem utilizando o length (6)
+o terceiro vai imprimir a quantidade de itens no array2 tambem utilizando o length (8)
+
 
 
 

@@ -73,4 +73,18 @@ while(quantidadeDeNumerosPares <= 10) {
   quantidadeDeNumerosPares++
 }
 */
+// Exercício 4
+/*
+const trigonometria = (a, b, c) =>{
 
+    if( a === b && b === c && c === a) {
+        console.log("Esse triangulo é equilátero")
+    } if(a === b && b === c && c !== a) {
+        console.log("Esse triangulo é escaleno")
+    } if(a !==b && b !==c && c !== a) {
+        console.log("Esse triangulo é isoceles")
+    }
+    
+}
+console.log(trigonometria(4,1,2))
+*/

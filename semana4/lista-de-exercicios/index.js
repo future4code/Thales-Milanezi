@@ -59,3 +59,18 @@ const frutas = ["banana","maça","laranja","uva","abacaxi"]
         D-) True
         E-) True
 */
+
+// Exercício 3
+/* Esse código não funciona porque o amigo não deu não deu um valor 
+para a variavel quantidade de numeros pares que eu coloquei 0, esqueceu de colocar a verificação se o numero é par ou não e também esqueceu o incremento que eu coloquei i++  */
+/*
+let quantidadeDeNumerosPares = 0
+
+while(quantidadeDeNumerosPares <= 10) {
+  if(quantidadeDeNumerosPares %2 === 0){
+      console.log(quantidadeDeNumerosPares)
+  }
+  quantidadeDeNumerosPares++
+}
+*/
+

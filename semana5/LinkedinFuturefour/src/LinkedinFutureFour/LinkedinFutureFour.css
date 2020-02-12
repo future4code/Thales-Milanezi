@@ -1,0 +1,11 @@
+.dados-pessoais{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 300px;
+    margin: 10px;
+    border: 2px solid black;
+}
+.dados-pessoais img{
+    width: 100px;
+    height: 100px;
+}

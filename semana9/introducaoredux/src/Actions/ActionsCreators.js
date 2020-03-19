@@ -13,74 +13,57 @@ function nome_da_function(Parametro da function){
 
 // ----------------------------------------------- exercício da tarde dia 16/03 -------------------------------------------
 
-//ação de escrever  o nome da tarefa no input
- export function writeTask (name){
+//adicionar uma tarefa
+ export function addTask (text){
   return{
-    type: 'TASK_NAME',
+    type: 'ADD_TASK',
     payload:{
-      name: name
+      text: text
     }
   }
 }
 
-// ação de mostrar a tarefa na tela
-export function showTaskOnScreen (show){
+// ação de toggle tarefa
+export function toggleTask (id){
   return{
     type: 'SHOW_TAKS',
     payload:{
-      show: show
+      id: id
     }
   }
 }
 
-// ação de riscar o nome da tarefa completa
-export function completedTask (risk){
+// Apagar uma tarefa
+export function deleteTask (id) {
   return{
-    type: 'TASK_COMPLETE',
+    type: 'DELETE_TASK',
     payload:{
-      risk: risk
+      id:id
     }
   }
 }
 
-// ação de mostrar todas as tarefas
-export function showAllTask (alltask){
+// marcar como todas completas 
+export function completeAllTasks () {
   return{
-    type: 'SHOW_ALL_TASK',
-    payload:{
-      risk: alltask
-    }
+    type: 'COMPLETE_ALL_TASKS'
   }
 }
 
-//ação de mostrar todas as tarefas dependentes
-export function pendingTask (pending){
-  return{
-    type: 'PENDING_TASK',
-    payload:{
-      pending: pending
+  // DELETAR TODAS AS COMPLETAS
+  export function deleteAllComplete(){
+    return{
+      type: 'DELETE_ALL_COMPLETE'
+      }
+    }
+
+  //filtrar as tarefas
+
+  export function setFilter (filter) {
+    return{
+      type: 'SET_FILTER',
+      payload: {
+        filter:filter
+      }
     }
   }
-}
-
-// ação de mostrar todas as tarefas completas
-export function showCompleteTask (complete){
-  return{
-    type: 'SHOW_COMPLETE_TASK',
-    payload:{
-      complete: complete
-    }
-  }
-}
-
-// ação de remover todas as tarefas completas
-export function deleteTask (deleted){
-  return{
-    type: 'DELETE_ALL_COMPLETE_TASK',
-    payload:{
-      deleted: deleted
-    }
-  }
-}
-
-// depois fazer o export default dessa pagina 

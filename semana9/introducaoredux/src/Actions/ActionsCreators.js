@@ -67,3 +67,11 @@ export function completeAllTasks () {
       }
     }
   }
+
+
+  // Aqui onde começa tudo de Redux depois que fez toda a parte do React e um pouco de css e tal !
+  // Então eu preciso cria todas as ações que meu programa vai ter e depois transforma-los em funções para podermos utiliza-los no reducer
+  // fez tudo aqui vai la na store (crie um arquivo store.js para ser mais facil de achar)
+
+  // VOLTE PARA CÁ SOMENTE DEPOIS DE TER TERMINADO TUDO PORQUE É AQUI QUE COMEÇARÁ A -------------API-----------
+

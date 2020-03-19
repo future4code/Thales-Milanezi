@@ -46,11 +46,6 @@ onclickButton = (event) => {
   }
 }
 
-const mapStateToProps = (state) => {
-  return{
-
-  }
-}
 
 const mapDispatchToProps = (dispatch) => {
   return{
@@ -60,4 +55,10 @@ const mapDispatchToProps = (dispatch) => {
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Inputs)
+export default connect(null, mapDispatchToProps)(Inputs)
+/* 
+Beleza chegando aqui vai olhamos aqui embaixo que tem o mapStateToProps e o mapDispatchToProps então ja vai começando a conectar as coisas aqui
+ja viu ne? sem mapStateToProps então vamos tratar do mapDispatchToProps, ou seja ele vai disparar a ação de adicionar a tarefa... oxi que jeito?
+olha o addtask que esta sendo retornado.... tem um parametro que é text ( ah pronto.... cade esse text?) Lá nos todosList, lá no todos.js do reducer
+e vamos usar o addTask no click do botão
+*/

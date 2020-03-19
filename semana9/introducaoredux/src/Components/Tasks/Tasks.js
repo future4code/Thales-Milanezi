@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Radio from '@material-ui/core/Radio';
+import { connect } from 'react-redux';
+
 
 
 class Tasks extends Component {
@@ -18,18 +17,45 @@ class Tasks extends Component {
   }
 
   render() {
+    console.log(this.props.taskList)
     return (
-
       <div>
-        <RadioGroup
-          aria-label="Gender"
-          name="gender1"
-          value={this.state.task}
-          onChange={this.handleChange}
-        />
-        <FormControlLabel value="newTask" control={<Radio />} label="Nova Tarefa" />
+        <ul>
+          {this.props.taskList.filter((task) => {
+            const filter = this.props.filter
+            if (filter === 'pendentes') {
+              return task.complete === false
+            }
+            if (filter === 'completas') {
+              return task.complete === true
+            }
+            return true
+          }).map(task => (<li key={task.id}
+            onClick={() => this.props.toggleTask(task.id)}
+          >
+            {task.text} - Completa: {String(task.complete)}
+            <button onClick={() => this.props.deleteTask}>Deletar</button>
+          </li>
+          ))}
+        </ul>
       </div>
     )
   }
 }
-export default Tasks
+
+
+const mapStateToProps = state => {
+  return {
+    taskList: state.todos.todosList,
+    filter: state.todos.filter
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    toggleTask: (id) => dispatch(toggleTask(id)),
+    deleteTask: (id) => dispatch(deleteTask(id))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Tasks)

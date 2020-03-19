@@ -20,21 +20,37 @@ class BottomBar extends Component {
   render() {
     return (
       <SpanWrapper>
-        <Link href='' color="inherit">
+        <Link href='' color="inherit" onClick={this.props.completeAllTasks}>
           {"Marcar como todas Completas"}
         </Link>
-        <Button variant="outlined" >
+        <Button onClick={() => this.props.setFilter('todas')} variant="outlined" >
           Todas
         </Button>
-        <Button variant="outlined" >
+        <Button onClick={() => this.props.setFilter('pendentes')} variant="outlined" >
           Pendentes
         </Button>
-        <Button variant="outlined" >
+        <Button onClick={() => this.props.setFilter('completas')} variant="outlined" >
           Completas
         </Button>
+        <div>
+          <Button variant="contained"
+            onClick={this.props.deleteAllComplete}
+          >
+            Remover Todas as Completas
+        </Button>
+        </div>
       </SpanWrapper>
     )
   }
 }
 
-export default BottomBar
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    completeAllTasks: () => dispatch(completeAllTasks()),
+    deleteAllComplete: () => dispatch(deleteAllComplete()),
+    setFilter: (filter) => dispatch(setFilter(filter))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(BottomBar)

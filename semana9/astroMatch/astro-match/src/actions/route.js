@@ -4,3 +4,5 @@ export const updateCurrentPage = (newPage) => ({
     newPage, // mesma coisa que newPage: newPage
   }
 });
+
+

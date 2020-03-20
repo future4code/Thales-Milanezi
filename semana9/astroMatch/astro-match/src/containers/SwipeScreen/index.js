@@ -8,6 +8,7 @@ import {mdiAccountMultipleCheck} from '@mdi/js'
 import {swipeLeft, swipeRight} from '../../components/UserSwipeCard/styled'
 import {updateCurrentPage} from '../../actions/route'
 import {Loader} from '../../components/Loader'
+import {getProfileToSwipe, chooseProfile} from '../../actions/profiles'
 
 export class SwipeScreen extends Component {
 	constructor(props) {
@@ -44,7 +45,6 @@ export class SwipeScreen extends Component {
 	render() {
 		const {profileToSwipe, goToMatchScreen} = this.props
 		const {currentAnimation} = this.state
-
 		return (
 			<SwipeScreenWrapper>
 				<AppBar
@@ -78,12 +78,24 @@ SwipeScreen.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
+	profileToSwipe: state.profiles.profileToSwipe,
+	matchScreen: state.profiles.matchScreen
+	
 })
 
 const mapDispatchToProps = (dispatch) => {
 	return {
 		goToMatchScreen: () => dispatch(updateCurrentPage('MatchScreen')),
+		getProfileToSwipe: () => dispatch(getProfileToSwipe()),
+		chooseProfile: (id,option) => dispatch(chooseProfile(id, option))
 	}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SwipeScreen)
+// essa é a tela principal 
+// getProfileToSwipe é para atualizar a lista
+
+
+// procurar a função que chama o getmatch
+// cria a action e o reducer
+// chamar no matchscreen

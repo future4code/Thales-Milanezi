@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import Link from '@material-ui/core/Link'
 import Button from '@material-ui/core/Button'
-
+import {completeAllTasks, deleteAllComplete, setFilter } from '../../Actions/ActionsCreators'
+import {connect} from 'react-redux'
+ 
 const SpanWrapper = styled.span`
 display: flex;
 flex-direction: row;

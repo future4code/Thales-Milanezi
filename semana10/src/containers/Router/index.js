@@ -2,15 +2,14 @@ import React from "react";
 import { ConnectedRouter } from "connected-react-router";
 import { Switch, Route } from "react-router-dom";
 import LoginPage from "../LoginPage";
-import CreateTripPage from '../CreateTripPage'
-import HomePage from '../HomePage'
+import CreateTripPage from '../CreateTripPage/CreateTripPage'
 import ListTripsPage from '../ListTripsPage'
 import TripDetailsPage from '../TripDetailsPage'
 import Login from '../Login'
-import { createBrowserHistory } from "history";
 
 
-const history = createBrowserHistory();
+
+
 
 const routes = {
   root: "/",

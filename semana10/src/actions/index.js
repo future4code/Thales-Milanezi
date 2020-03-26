@@ -2,9 +2,9 @@ import Axios from "axios"
 import { push } from 'connected-react-router'
 import { routes } from "../containers/Router";
 
-
-const baseUrl = `https://us-central1-missao-newton.cloudfunctions.net/futureX/thales${user}`
 const user = "thales"
+const baseUrl = `https://us-central1-missao-newton.cloudfunctions.net/futureX/${user}`
+
 
 export const getList = id => {
   return {
@@ -31,7 +31,7 @@ export const login = (email, password) => async (dispatch) => {
   }
 
   try {
-    const response = await Axios.post(`${baseUrl / login}`, loginData);
+    const response = await Axios.post(`${baseUrl}/login`, loginData);
     const token = response.data.token
     localStorage.setItem("token", token)
     dispatch(push("/trips/list"))
@@ -43,12 +43,12 @@ export const login = (email, password) => async (dispatch) => {
 
 
 // ---------------------------------------- API ---------------------------------
-export const fetchGetList = () => (dispatch, getState) => {
+export const fetchGetList = () => async (dispatch, getState) => {
   const response = await Axios.get('https://us-central1-missao-newton.cloudfunctions.net/futureX/thales/trips');
   dispatch(getList(response.data.trips))
 }
 
-export const fetchGetTripDetails = () => (dispatch, getState) => {
+export const fetchGetTripDetails = () => async (dispatch, getState) => {
   const response = await Axios.get('https://us-central1-missao-newton.cloudfunctions.net/futureX/thales/trip/:id?=');
   dispatch(getTripDetails(response.data.trips))
 }

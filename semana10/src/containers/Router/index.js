@@ -1,6 +1,6 @@
 import React from "react";
 import { ConnectedRouter } from "connected-react-router";
-import { Switch, Route, exact } from "react-router-dom";
+import { Switch, Route, Exact } from "react-router-dom";
 import LoginPage from "../LoginPage";
 import CreateTripPage from '../CreateTripPage/CreateTripPage'
 import ListTripsPage from '../ListTripsPage/ListTripsPage'

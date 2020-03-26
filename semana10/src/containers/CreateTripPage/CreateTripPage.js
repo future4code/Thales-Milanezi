@@ -1,6 +1,10 @@
-import {React, Component } from 'react'
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { push } from "connected-react-router";
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
+
+
 
 const createTrips = [
 
@@ -66,27 +70,35 @@ class CreateTripPage extends Component {
     })
   }
 
+  handleSubmission = event => {
+    event.preventDefault();
+    console.log(this.state.form)
+  };
+
 
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmission}>
           {createTrips.map(field => {
             return (
-              <div>
+              <div key={field.name}>
                 <label htmlFor={field.name}>{field.label}</label>
-                <input
+                <TextField
                   id={field.name}
+                  name={field.name}
                   type={field.type}
                   value={this.state.form[field.name]}
                   onChange={this.handleInputChange}
                   inputProps={{ pattern: field.pattern }} // slide 23
                   min={field.min}
                   required={field.required}
+                  title={field.title}
                 />
-              </div>)
+              </div>
+              );
           })}
-          <button type='submit'>Cadastrar</button>
+          <Button type='submit' variant="contained">Cadastrar</Button>
         </form>
       </div>
     )

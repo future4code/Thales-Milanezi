@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
+import {React, Component } from 'react'
 import { connect } from 'react-redux';
+import { push } from "connected-react-router";
 
 const createTrips = [
 
@@ -64,7 +65,7 @@ class CreateTripPage extends Component {
       }
     })
   }
-  
+
 
   render() {
     return (
@@ -92,7 +93,7 @@ class CreateTripPage extends Component {
   }
 }
 
-mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
   return {
     screenCreateTripPage: () => dispatch(push("/createTripPage"))
   }

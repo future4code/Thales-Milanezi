@@ -6,11 +6,11 @@ const user = "thales"
 const baseUrl = `https://us-central1-missao-newton.cloudfunctions.net/futureX/${user}`
 
 
-export const getList = id => {
+export const getList = listtrip => {
   return {
     type: 'LIST_TRIP',
     payload: {
-      id
+      listtrip
     }
   }
 }

@@ -3,6 +3,15 @@ import Grid from '@material-ui/core/Grid'
 import { Button } from "@material-ui/core"
 import Typography from "@material-ui/core/Typography"
 import Paper from "@material-ui/core/Paper"
+import { push } from 'connected-react-router'
+//import { routes } from "../containers/Router";
+//import {getList, getTripDetails} from '../../actions/index'
+import Header from '../../Components/Header'
+import Footer from '../../Components/Footer'
+import HomeButton from '../../Components/HomeButton'
+import MasterGrid from '../../Components/MasterGrid'
+import AllTittles from '../../Components/AllTittles'
+import LittleGrid from "../../Components/LittleGrid"
 
 class HomePage extends Component {
   constructor(props) {
@@ -10,41 +19,68 @@ class HomePage extends Component {
     this.state = {
     }
   }
-  
+
   render() {
     return (
-      <Grid container spacing={16} color="C0B9DD">
+     
+      <MasterGrid>
+        <Header/>
         <Typography component="h2" variant="h1" gutterBottom>FutureX</Typography>
         <Grid container>
 
-          <Grid item xs={3} color="80A1D4">
+        <LittleGrid>
             <Paper>
-              <Typography variant="h5" gutterBottom>Faça seu Login !</Typography>
-              <Button variant="contained" color="primary">Login</Button>
+            <AllTittles> Login </AllTittles>
+              <HomeButton onClick={this.props.screenLoginPage}>Login</HomeButton>
             </Paper>
-          </Grid>
+          </LittleGrid>
 
-          <Grid item xs={3} color="80A1D4">
+          <LittleGrid>
             <Paper>
-              <Typography variant="h5" gutterBottom>Viagens disponíveis</Typography>
-              <Button variant="contained" color="primary">Ver as Viagens</Button>
+            <AllTittles> Detalhes da Viagem </AllTittles>
+              <HomeButton onClick={this.props.screenTripsDetail} >Viagem</HomeButton>
             </Paper>
-          </Grid>
+          </LittleGrid>
 
-          <Grid item xs={3} color="80A1D4">
+          <LittleGrid>
             <Paper>
-              <Typography variant="h5" gutterBottom>Candidate-se a uma viagem</Typography>
-              <Button variant="contained" color="primary">Candidatos</Button>
+            <AllTittles>Viagens disponíveis</AllTittles>
+              <HomeButton onClick={this.props.screenlistTripsPage} >Ver as Viagens</HomeButton>
             </Paper>
-          </Grid>
+          </LittleGrid>
 
+          <LittleGrid>
+            <Paper>
+            <AllTittles>Candidate-se a uma viagem</AllTittles>
+              <HomeButton onClick={this.props.screencreateTripPage} >Candidatos</HomeButton>
+            </Paper>
+          </LittleGrid>
         </Grid>
-      </Grid>
+        <Footer/>
+      </MasterGrid>
     )
   }
 }
 
 
-export default HomePage
+const mapStateToProps = (state) => {
+  return {
+ //   alltriplist: state.actionsTrips.listtrips 
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return{
+//    screenTripsDetail: () => dispatch(push(routes.tripDetailsPage)),
+ //   screencreateTripPage: () => dispatch(push(routes.createTripPage)),
+///    screenlistTripsPage: () => dispatch(push(routes.listTripsPage)),
+ //   screenLoginPage: () => dispatch(push(routes.LoginPage)),
+//    fetchGetTripDetails: () =>dispatch(getTripDetails()),
+//    fetchGetList: () => dispatch(getList())
+  }
+}
+
+
+export default (mapStateToProps, mapDispatchToProps)(HomePage)
 
 // Essa deve ser a Primeira pagina que qualquer usuário deva ver, Tanto ADM quando Publico

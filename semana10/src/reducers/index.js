@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
 import { connectRouter } from "connected-react-router";
-import {alltrips} from './actionTrips'
+import {trips} from './trips'
 
 
 
 export const generateReducers = history =>
   combineReducers({
     router: connectRouter(history),
-    alltrips
+    trips
     // Outros reducers aqui
   });

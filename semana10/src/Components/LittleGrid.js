@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 import Grid from '@material-ui/core/Grid'
+import styled from 'styled-components'
+import { CardContent } from '@material-ui/core'
 
+export const Cartao = styled(CardContent)`
+display: grid;
+`
 
 
 class LittleGrid extends Component {
@@ -12,7 +17,9 @@ class LittleGrid extends Component {
   }
   render() {
     return (
-      <Grid item xs={3} color="80A1D4"/>
+      <Cartao color="#80A1D4">
+        {this.props.children}
+      </Cartao>
     )
   }
 }

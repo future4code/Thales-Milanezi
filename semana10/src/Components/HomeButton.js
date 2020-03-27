@@ -3,18 +3,18 @@ import Button from '@material-ui/core/Button'
 
 
 
-class HomeButton extends Component{
-  constructor(props){
+class HomeButton extends Component {
+  constructor(props) {
     super(props)
-    this.state={
+    this.state = {
 
     }
   }
-  render(){
-    return(
-      <div>
-        <Button variant="contained" color="primary"/>
-      </div>
+  render() {
+    return (
+      <Button onClick={this.props.onClick} variant="contained" color="primary" >
+        {this.props.children}
+      </Button>
     )
   }
 }

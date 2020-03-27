@@ -1,16 +1,17 @@
-import Axios from "axios"
+import axios from "axios"
 import { push } from 'connected-react-router'
 import { routes } from "../containers/Router";
+
 
 const user = "thales"
 const baseUrl = `https://us-central1-missao-newton.cloudfunctions.net/futureX/${user}`
 
 
-export const getList = listtrip => {
+export const setTrips = tripsList => {
   return {
-    type: 'LIST_TRIP',
+    type: 'SET_TRIPS',
     payload: {
-      listtrip
+      tripsList
     }
   }
 }
@@ -23,6 +24,17 @@ export const getTripDetails = id => {
     }
   }
 }
+
+
+export const getTrips =() => async (dispatch) => {
+  try{
+    const response = await axios.get(`${baseUrl}/trips`)
+    dispatch(setTrips(response.data.trips))
+  } catch(error){
+    console.log(error)
+    window.alert("error, sem lista de viagens!")
+  }
+}
 //--------------------------------------------- Ação do login --------------
 export const login = (email, password) => async (dispatch) => {
   const loginData = {
@@ -31,12 +43,12 @@ export const login = (email, password) => async (dispatch) => {
   }
 
   try {
-    const response = await Axios.post(`${baseUrl}/login`, loginData);
+    const response = await axios.post(`${baseUrl}/login`, loginData);
     const token = response.data.token
     localStorage.setItem("token", token)
     dispatch(push("/trips/list"))
   } catch (error) {
-    console.error("ops, algo deu errado, tente novamente", error)
+    window.alert("ops, algo deu errado, tente novamente", error)
   }
 
 }
@@ -44,12 +56,12 @@ export const login = (email, password) => async (dispatch) => {
 
 // ---------------------------------------- API ---------------------------------
 export const fetchGetList = () => async (dispatch, getState) => {
-  const response = await Axios.get('https://us-central1-missao-newton.cloudfunctions.net/futureX/thales/trips');
-  dispatch(getList(response.data.trips))
+  const response = await axios.get('https://us-central1-missao-newton.cloudfunctions.net/futureX/thales/trips');
+  dispatch(setTrips(response.data.trips))
 }
 
 export const fetchGetTripDetails = () => async (dispatch, getState) => {
-  const response = await Axios.get('https://us-central1-missao-newton.cloudfunctions.net/futureX/thales/trip/:id?=');
+  const response = await axios.get('https://us-central1-missao-newton.cloudfunctions.net/futureX/thales/trip/:id?=');
   dispatch(getTripDetails(response.data.trips))
 }
 

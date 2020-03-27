@@ -1,17 +1,20 @@
 import React, { Component } from "react"
-import Grid from '@material-ui/core/Grid'
-import { Button } from "@material-ui/core"
-import Typography from "@material-ui/core/Typography"
-import Paper from "@material-ui/core/Paper"
-import { push } from 'connected-react-router'
-//import { routes } from "../containers/Router";
-//import {getList, getTripDetails} from '../../actions/index'
+import styled from 'styled-components'
+
+import PaperCard from "../../Components/Paper"
 import Header from '../../Components/Header'
 import Footer from '../../Components/Footer'
 import HomeButton from '../../Components/HomeButton'
 import MasterGrid from '../../Components/MasterGrid'
 import AllTittles from '../../Components/AllTittles'
 import LittleGrid from "../../Components/LittleGrid"
+
+import { push } from 'connected-react-router'
+import { routes } from "../Router";
+import { connect } from "react-redux"
+
+
+
 
 class HomePage extends Component {
   constructor(props) {
@@ -22,19 +25,22 @@ class HomePage extends Component {
 
   render() {
     return (
-     
       <MasterGrid>
         <Header/>
-        <Typography component="h2" variant="h1" gutterBottom>FutureX</Typography>
-        <Grid container>
-
         <LittleGrid>
-            <Paper>
-            <AllTittles> Login </AllTittles>
+            <PaperCard>
+              <AllTittles>Faça seu login </AllTittles>
               <HomeButton onClick={this.props.screenLoginPage}>Login</HomeButton>
-            </Paper>
+            </PaperCard>
           </LittleGrid>
 
+          <LittleGrid>
+            <PaperCard>
+            <AllTittles>Candidate-se a uma viagem</AllTittles>
+              <HomeButton onClick={this.props.screencreateTripPage} >Candidatos</HomeButton>
+            </PaperCard>
+          </LittleGrid>
+{/*
           <LittleGrid>
             <Paper>
             <AllTittles> Detalhes da Viagem </AllTittles>
@@ -45,17 +51,10 @@ class HomePage extends Component {
           <LittleGrid>
             <Paper>
             <AllTittles>Viagens disponíveis</AllTittles>
-              <HomeButton onClick={this.props.screenlistTripsPage} >Ver as Viagens</HomeButton>
+              <HomeButton onClick={this.props.screenlistTripsPage}>Ver as Viagens</HomeButton>
             </Paper>
-          </LittleGrid>
-
-          <LittleGrid>
-            <Paper>
-            <AllTittles>Candidate-se a uma viagem</AllTittles>
-              <HomeButton onClick={this.props.screencreateTripPage} >Candidatos</HomeButton>
-            </Paper>
-          </LittleGrid>
-        </Grid>
+          </LittleGrid>  
+*/}
         <Footer/>
       </MasterGrid>
     )
@@ -65,22 +64,23 @@ class HomePage extends Component {
 
 const mapStateToProps = (state) => {
   return {
- //   alltriplist: state.actionsTrips.listtrips 
+    tripsList: state.trips.tripsList 
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return{
-//    screenTripsDetail: () => dispatch(push(routes.tripDetailsPage)),
- //   screencreateTripPage: () => dispatch(push(routes.createTripPage)),
-///    screenlistTripsPage: () => dispatch(push(routes.listTripsPage)),
- //   screenLoginPage: () => dispatch(push(routes.LoginPage)),
-//    fetchGetTripDetails: () =>dispatch(getTripDetails()),
-//    fetchGetList: () => dispatch(getList())
+  screenTripsDetail: () => dispatch(push(routes.tripDetailsPage)),
+  screencreateTripPage: () => dispatch(push(routes.createTripPage)),
+  screenlistTripsPage: () => dispatch(push(routes.listTripsPage)),
+  screenLoginPage: () => dispatch(push(routes.aplicationForm)),
+ // fetchGetTripDetails: () =>dispatch(getTripDetails()),
+  //fetchGetList: () => dispatch(getList())
   }
 }
 
 
-export default (mapStateToProps, mapDispatchToProps)(HomePage)
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage)
 
 // Essa deve ser a Primeira pagina que qualquer usuário deva ver, Tanto ADM quando Publico
+// Chamei de applicationForm a pagina de login e isso fica confuso pra todo mundo 

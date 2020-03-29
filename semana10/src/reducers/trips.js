@@ -1,6 +1,7 @@
 
 const initialState = {
- tripsList: []
+ tripsList: [],
+ createCandidate: []
 }
 
 export const trips = (state= initialState, action) => {
@@ -10,16 +11,12 @@ export const trips = (state= initialState, action) => {
         ...state, 
         tripsList: action.payload.tripsList
       }
-      /*
-      case "TRIP_DETAILS":
-          {const newlisttrip = state.listtrip.map(listrip => {
-            if (listrip.id === action.payload.id) {
-              return {
-            ...state,
-            listtrip: [newlisttrip]
-            }
-          })
-          };}*/
+      case "SET_CANDIDATE":
+        return{
+          ...state,
+          createCandidate: action.payload.candidate 
+
+        }
       default:
     return state
   }

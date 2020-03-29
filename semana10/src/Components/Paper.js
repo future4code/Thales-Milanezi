@@ -6,8 +6,6 @@ import { Card } from '@material-ui/core'
 export const Papel = styled(Card)`
 display: flex;
 flex-direction: column;
-justify-items: center;
-align-content: center;
 `
 
 
@@ -20,7 +18,7 @@ class PaperCard extends Component {
   }
   render() {
     return (
-      <Papel item xs={3} color="#80A1D4">
+      <Papel color="#80A1D4">
         {this.props.children}
       </ Papel>
     )

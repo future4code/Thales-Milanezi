@@ -7,6 +7,7 @@ import ListTripsPage from '../ListTripsPage/ListTripsPage'
 import TripDetailsPage from '../TripDetailsPage/TripDetailsPage'
 import HomePage from '../HomePage/HomePage'
 import CandidatePage from '../CreateCandidatePage/CreateCandidatePage'
+import AfterLogin from "../AfterLogin";
 
 
 
@@ -17,7 +18,8 @@ export const routes = {
   createTripPage: "/trips/create",
   tripDetailsPage: "/trips/details",
   listTripsPage: "/trips/list",
-  createCandidatePage:"/trips/candidate"
+  createCandidatePage:"/trips/candidate",
+  afterLogin:'/adminPage'
 };
 
 function Router(props) {
@@ -30,6 +32,7 @@ function Router(props) {
         <Route exact path={routes.listTripsPage} component={ListTripsPage} />
         <Route exact path={routes.tripDetailsPage} component={TripDetailsPage} />
         <Route exact path={routes.createCandidatePage} component={CandidatePage}/>
+        <Route exact path={routes.afterLogin} component={AfterLogin}/>
       </Switch>
     </ConnectedRouter>
   );

@@ -40,21 +40,6 @@ class HomePage extends Component {
               <HomeButton onClick={this.props.screencreateTripPage} >Candidatos</HomeButton>
             </PaperCard>
           </LittleGrid>
-{/*
-          <LittleGrid>
-            <Paper>
-            <AllTittles> Detalhes da Viagem </AllTittles>
-              <HomeButton onClick={this.props.screenTripsDetail} >Viagem</HomeButton>
-            </Paper>
-          </LittleGrid>
-
-          <LittleGrid>
-            <Paper>
-            <AllTittles>Viagens disponíveis</AllTittles>
-              <HomeButton onClick={this.props.screenlistTripsPage}>Ver as Viagens</HomeButton>
-            </Paper>
-          </LittleGrid>  
-*/}
         <Footer/>
       </MasterGrid>
     )
@@ -69,9 +54,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return{
-  screenTripsDetail: () => dispatch(push(routes.tripDetailsPage)),
-  screencreateTripPage: () => dispatch(push(routes.createTripPage)),
+  return {
   screenlistTripsPage: () => dispatch(push(routes.listTripsPage)),
   screenLoginPage: () => dispatch(push(routes.aplicationForm)),
  // fetchGetTripDetails: () =>dispatch(getTripDetails()),

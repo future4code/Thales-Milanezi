@@ -1,5 +1,17 @@
 import React, { Component } from 'react'
 
+import TextField from '@material-ui/core/TextField'
+import HomeButton from '../../Components/HomeButton'
+
+import Header from '../../Components/Header'
+import Footer from '../../Components/Footer'
+import MasterGrid from '../../Components/MasterGrid'
+import PaperCard from '../../Components/Paper'
+import AllTittles from '../../Components/AllTittles'
+
+import { connect } from 'react-redux';
+import { push } from "connected-react-router";
+
 
 const createCandidate = [
   {
@@ -11,7 +23,7 @@ const createCandidate = [
     title: "Nome Completo"
   },
   {
-    name:'idade',
+    name: 'idade',
     label: "Idade",
     type: "number",
     required: true,
@@ -19,7 +31,7 @@ const createCandidate = [
     title: "Digite sua idade - Deverá ser maior que 18 anos"
   },
   {
-    name:"Porque voce é um bom candidato?",
+    name: "Porque voce é um bom candidato?",
     label: "Escreva seu texto para inscrição",
     type: "text",
     required: true,
@@ -27,33 +39,32 @@ const createCandidate = [
     title: "Texto com no mínimo 30 caracteres"
   },
   {
-    name:'Profissão',
-    label: "Nome do Candidato ",
+    name: 'Profissão',
+    label: "Profissão ",
     type: "text",
     required: true,
     pattern: "[a-zA-Z]{10,}",
     title: "Digite o nome da sua profissão atual"
   },
   {
-    name:"País",
-    label: "Nome do Candidato ",
+    name: "País",
+    label: "Escolha um país ",
     type: "text",
     required: true,
-    pattern: "[a-zA-Z]{3,}",
     title: "Escolha ao menos um país"
   },
 ]
 
-class CandidatePage extends Component{
-  constructor(props){
+class CandidatePage extends Component {
+  constructor(props) {
     super(props)
-    this.state={
-      form:{}
+    this.state = {
+      form: {}
     }
   }
 
   handleInputform = event => {
-    const {name, value} =event.target;
+    const { name, value } = event.target;
     this.setState({
       ...this.state.form,
       [name]: value
@@ -66,13 +77,47 @@ class CandidatePage extends Component{
   }
 
 
-  render(){
-    return(
-      <div>
-        Oi eu preciso de um formulário aqui que cria o candidato
-      </div>
+  render() {
+    return (
+      <MasterGrid>
+        <Header />
+        <PaperCard>
+          <AllTittles>Faça sua inscrição </AllTittles>
+          <form onSubmit={this.handleCheckCandidate}>
+            {createCandidate.map(field => {
+              return (
+                <div key={field.name}>
+                  <label html={field.name}>{field.label}</label>
+                  <TextField
+                    variant="outlined"
+                    margin="normal"
+                    id={field.name}
+                    name={field.name}
+                    type={field.type}
+                    value={this.state.form[field.name]}
+                    onChange={this.handleInputChange}
+                    inputProps={{ pattern: field.pattern }}
+                    min={field.min}
+                    required={field.required}
+                    title={field.title}
+                  />
+
+                </div>
+              )
+            })}
+            <HomeButton type='submit' variant="contained">Inscreva-se</HomeButton>
+          </form>
+        </PaperCard>
+        <Footer />
+      </MasterGrid>
     )
   }
 }
 
-export default CandidatePage
+const mapDispatchToProps = (dispatch) => {
+  return {
+    screenCreateCandidate: () => dispatch(push('/CreateCandidatePage'))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(CandidatePage)

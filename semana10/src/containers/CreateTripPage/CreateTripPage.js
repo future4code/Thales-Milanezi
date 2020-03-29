@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
+
 import { connect } from 'react-redux';
 import { push } from "connected-react-router";
+
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
+
+import Header from '../../Components/Header'
+import Footer from '../../Components/Footer'
+import MasterGrid from '../../Components/MasterGrid'
+import LittleGrid from '../../Components/LittleGrid'
 
 
 
@@ -78,29 +85,35 @@ class CreateTripPage extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmission}>
-          {createTrips.map(field => {
-            return (
-              <div key={field.name}>
-                <label htmlFor={field.name}>{field.label}</label>
-                <TextField
-                  id={field.name}
-                  name={field.name}
-                  type={field.type}
-                  value={this.state.form[field.name]}
-                  onChange={this.handleInputChange}
-                  inputProps={{ pattern: field.pattern }} // slide 23
-                  min={field.min}
-                  required={field.required}
-                  title={field.title}
-                />
-              </div>
+      <MasterGrid>
+        <Header />
+        <LittleGrid>
+          <form onSubmit={this.handleSubmission}>
+            {createTrips.map(field => {
+              return (
+                <div key={field.name}>
+                  <label htmlFor={field.name}>{field.label}</label>
+                  <TextField
+                    variant="outlined"
+                    margin="normal"
+                    id={field.name}
+                    name={field.name}
+                    type={field.type}
+                    value={this.state.form[field.name]}
+                    onChange={this.handleInputChange}
+                    inputProps={{ pattern: field.pattern }} // slide 23
+                    min={field.min}
+                    required={field.required}
+                    title={field.title}
+                  />
+                </div>
               );
-          })}
-          <Button type='submit' variant="contained">Cadastrar</Button>
-        </form>
-      </div>
+            })}
+            <Button type='submit' variant="contained">Cadastrar</Button>
+          </form>
+        </LittleGrid>
+        <Footer />
+      </MasterGrid>
     )
   }
 }

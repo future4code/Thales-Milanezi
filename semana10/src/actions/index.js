@@ -25,6 +25,14 @@ export const getTripDetails = id => {
   }
 }
 
+export const setCandidate = (candidate) => {
+  return{
+    type:"SET_CANDIDATE",
+    payload:{
+      candidate
+    }
+  }
+}
 
 export const getTrips =() => async (dispatch) => {
   try{
@@ -46,7 +54,7 @@ export const login = (email, password) => async (dispatch) => {
     const response = await axios.post(`${baseUrl}/login`, loginData);
     const token = response.data.token
     localStorage.setItem("token", token)
-    dispatch(push("/trips/list"))
+    dispatch(push(routes.root))
   } catch (error) {
     window.alert("ops, algo deu errado, tente novamente", error)
   }

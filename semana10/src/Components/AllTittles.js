@@ -4,8 +4,8 @@ import Typography from '@material-ui/core/Typography'
 
 export const Titulo = styled(Typography)`
 margin: 0 auto;
-background-color: #C0B9DD;
-
+background-color: #75C9C8;
+padding: 0;
 `
 
 
@@ -20,7 +20,6 @@ class AllTittles extends Component{
       <div>
         <Titulo variant="h5" gutterBottom>
           {this.props.children}
-          {this.props.imagem}
         </Titulo>
       </div>
     )

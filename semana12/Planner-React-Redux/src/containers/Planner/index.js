@@ -1,53 +1,75 @@
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
-import {GlobalStyle} from './plannerStyle'
-import {MainCard, TaskCard, InputTask, ButtonTask, AllTexts, HeaderCard,Tasks, HandleAllCard, Footer} from './plannerStyle'
+import { MainCard, TaskCard, AllTexts, Tasks, HandleAllCard } from './plannerStyle'
+import Footer from '../../Components/Footer/Footer'
+import Header from '../../Components/Header/Header'
+import ListTask from "../../Components/ListTask/ListTask";
 
 
-class Planner extends React.Component {
+
+class Planner extends Component {
   render() {
+
+    const taskSegunda = []//taskList.filter(task => task.newTask === "Segunda")
+    const taskTerca = []
+    const taskQuarta = []
+    const taskQuinta = []
+    const taskSexta = []
+    const taskSabado = []
+    const taskDomingo = []
+
+
     return (
       <MainCard>
         <AllTexts variant="h2">Planner Semanal</AllTexts>
-      <HeaderCard>
-       <AllTexts>Adicione uma Nova Tarefa</AllTexts>
-       <InputTask></InputTask>
-       <ButtonTask>Enviar</ButtonTask>
-      </HeaderCard>
-      <HandleAllCard>
-      <TaskCard>
-      <AllTexts>Segunda-Feira</AllTexts>
-      <Tasks>oi</Tasks>
-      </TaskCard>
-      <TaskCard>
-      <AllTexts>Terça-Feira</AllTexts>
-      <Tasks>tudo bem?</Tasks>
-      </TaskCard>
-      <TaskCard>
-      <AllTexts>Quarta-Feira</AllTexts>
-      <Tasks>show</Tasks>
-      </TaskCard>
-      <TaskCard>
-      <AllTexts>Quinta-Feira</AllTexts>
-      <Tasks>eai</Tasks>
-      </TaskCard>
-      <TaskCard>
-      <AllTexts>Sexta-Feira</AllTexts>
-      <Tasks></Tasks>
-      </TaskCard>
-      <TaskCard>
-      <AllTexts>Sábado</AllTexts>
-      <Tasks></Tasks>
-      </TaskCard>
-      <TaskCard>
-      <AllTexts>Domingo</AllTexts>
-      <Tasks></Tasks>
-      </TaskCard>
-      </HandleAllCard>
-      <Footer>Feito Por Thales Milanezi</Footer>
+        <Header />
+        <HandleAllCard>
+          <ListTask />
+          <TaskCard>
+            <AllTexts>Segunda-Feira</AllTexts>
+            <Tasks>{taskSegunda.filter}</Tasks>
+          </TaskCard>
+          <TaskCard>
+            <AllTexts>Terça-Feira</AllTexts>
+            <Tasks>{taskTerca.filter}</Tasks>
+          </TaskCard>
+          <TaskCard>
+            <AllTexts>Quarta-Feira</AllTexts>
+            <Tasks>{taskQuarta.filter}</Tasks>
+          </TaskCard>
+          <TaskCard>
+            <AllTexts>Quinta-Feira</AllTexts>
+            <Tasks>{taskQuinta.filter}</Tasks>
+          </TaskCard>
+          <TaskCard>
+            <AllTexts>Sexta-Feira</AllTexts>
+            <Tasks>{taskSexta.filter}</Tasks>
+          </TaskCard>
+          <TaskCard>
+            <AllTexts>Sábado</AllTexts>
+            <Tasks>{taskSabado.filter}</Tasks>
+          </TaskCard>
+          <TaskCard>
+            <AllTexts>Domingo</AllTexts>
+            <Tasks>{taskDomingo.filter}</Tasks>
+          </TaskCard>
+        </HandleAllCard>
+        <Footer />
       </MainCard>
     );
   }
 }
 
-export default connect()(Planner);
+const mapStateToProps = (state) => {
+  return{
+    taskList: state.tasks.tasks
+  }
+  }
+  
+  const mapDispatchToProps = (dispatch) => {
+  return{
+
+  }
+  }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Planner)

@@ -4,8 +4,6 @@ const baseUrl ='https://us-central1-missao-newton.cloudfunctions.net/generic/pla
 
 export const createNewTask = () => async(dispatch) =>{
   const newtasks = { 
-    day,
-    text
   }
   try{
     const response = await axios.post(`${baseUrl}`, newtasks)
@@ -18,11 +16,7 @@ export const createNewTask = () => async(dispatch) =>{
 
 export const getAllTasks = () => async (dispatch) => {
   try {
-      const response = await axios.get(`${baseUrl}`, {
-          headers: {
-              auth: "thales"
-          }
-      })
+      const response = await axios.get(`${baseUrl}`)
       dispatch(getTasks(response.data))
   } catch (error) {
       alert('Não foi possivel mostrar as tarefas', error)

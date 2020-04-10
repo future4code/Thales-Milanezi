@@ -13,7 +13,7 @@ body{
 export const MainCard = styled(Paper)`
 display: grid;
 grid-template-columns: 1fr;
-grid-template-rows: 10% 10% 70% 5%;
+grid-template-rows: 10% 18% 60% 5%;
 width: 90vw;
 height: 95vh;
 margin-left: 5vw;
@@ -39,8 +39,6 @@ display: flex;
 flex-direction: column;
 justify-content:space-around;
 align-items:center;
-flex-wrap: wrap;
-height: 100%;
 gap: 10px;
 `
 

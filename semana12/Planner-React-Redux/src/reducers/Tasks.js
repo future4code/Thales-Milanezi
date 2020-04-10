@@ -8,6 +8,7 @@ const tasks = (state= initialState, action) =>{
       // const newTasks ={
       //   id:"", day:"", text:""
       // }
+      console.log(action.payload)
       return{
         ...state, 
         tasks: action.payload.newtask

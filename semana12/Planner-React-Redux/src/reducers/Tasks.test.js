@@ -1,4 +1,4 @@
-import Tasks from './Tasks'
+import tasks from './tasks'
 import {createTask} from '../actions/actions'
 
 

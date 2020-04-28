@@ -1,10 +1,10 @@
 import { User } from "./User";
-import { Customer } from "./Customer";
+
 
 export class Employee extends User {
   protected admissionDate: string
-  protected baseSalary: number
-  private benefits: number
+  protected baseSalary: number = 1200
+  static BENEFITS_VALUE: number = 400;
 
   constructor(id: string, email: string, name: string, password: string, admissionDate: string, baseSalary: number){
     super(id, email, name, password)
@@ -21,6 +21,6 @@ export class Employee extends User {
   }
 
   public calculateTotalSalary(): number{
-    return this.baseSalary+
+    return Employee.BENEFITS_VALUE + 400;
   }
 }

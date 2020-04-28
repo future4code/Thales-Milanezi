@@ -18,6 +18,8 @@ var Employee = /** @class */ (function (_super) {
     __extends(Employee, _super);
     function Employee(id, email, name, password, admissionDate, baseSalary) {
         var _this = _super.call(this, id, email, name, password) || this;
+        _this.baseSalary = 1200;
+        _this.benefits = 400;
         _this.admissionDate = admissionDate;
         _this.baseSalary = baseSalary;
         return _this;
@@ -27,6 +29,9 @@ var Employee = /** @class */ (function (_super) {
     };
     Employee.prototype.getBaseSalary = function () {
         return this.baseSalary;
+    };
+    Employee.prototype.calculateTotalSalary = function () {
+        return this.baseSalary + this.benefits;
     };
     return Employee;
 }(User_1.User));

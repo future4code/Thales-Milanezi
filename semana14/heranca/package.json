@@ -1,0 +1,20 @@
+{
+  "name": "herancaproject",
+  "version": "0.0.1",
+  "description": "trabalho sobre herança das classes em typescript",
+  "main": "\u001b[D\u001b[D\u001b[D\u001bts\u001b[C",
+  "scripts": {
+    "start": "tsc index.ts && ",
+    "test": "jest"
+  },
+  "keywords": [
+    "typescript",
+    "classes",
+    "heranca"
+  ],
+  "author": "thales milanezi",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.24.0"
+  }
+}

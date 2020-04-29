@@ -9,7 +9,7 @@ export class CommercialClient extends Commerce implements Client{
   floorsQuantity: number
   cep: string
 
-  constructor(floorsQuantity: number,cep: string){
+  constructor(name: string, registrationNumber: number,floorsQuantity: number,cep: string){
     super(floorsQuantity, cep)
     this.CNPJ
   }

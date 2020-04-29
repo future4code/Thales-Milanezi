@@ -9,7 +9,7 @@ export class IndustrialClient extends Industry implements Client{
   machinesQuantity: number
   cep: string
 
-  constructor(machinesQuantity: number, cep: string){
+  constructor(name: string, registrationNumber: number,machinesQuantity: number, cep: string){
     super(machinesQuantity, cep)
   }
 

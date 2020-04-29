@@ -8,7 +8,7 @@ export class ResidentialClient extends Residence implements Client{
   registrationNumber: number
   consumedEnergy: number
 
-  constructor(residentsQuantity:number, cep:string){
+  constructor( name: string, registrationNumber: number, residentsQuantity:number, cep:string){
     super(residentsQuantity,cep)    
   }
   calculateBill(): number {

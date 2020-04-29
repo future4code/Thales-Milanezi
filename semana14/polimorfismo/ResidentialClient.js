@@ -13,19 +13,18 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
-var Place_1 = require("./Place");
-var Industry = /** @class */ (function (_super) {
-    __extends(Industry, _super);
-    function Industry(machinesQuantity, 
-    // Refere-se à quantidade de máquinas do local 
-    cep) {
-        var _this = _super.call(this, cep) || this;
-        _this.machinesQuantity = machinesQuantity;
-        return _this;
+var Residence_1 = require("./Residence");
+var ResidentialClient = /** @class */ (function (_super) {
+    __extends(ResidentialClient, _super);
+    function ResidentialClient(name, registrationNumber, residentsQuantity, cep) {
+        return _super.call(this, residentsQuantity, cep) || this;
     }
-    Industry.prototype.getmachinesQuantity = function () {
-        return this.machinesQuantity;
+    ResidentialClient.prototype.calculateBill = function () {
+        return this.consumedEnergy * 0.75;
     };
-    return Industry;
-}(Place_1.Place));
-exports.Industry = Industry;
+    ResidentialClient.prototype.getcpf = function () {
+        return this.cpf;
+    };
+    return ResidentialClient;
+}(Residence_1.Residence));
+exports.ResidentialClient = ResidentialClient;

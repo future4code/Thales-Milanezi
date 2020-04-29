@@ -13,19 +13,20 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
-var Place_1 = require("./Place");
-var Industry = /** @class */ (function (_super) {
-    __extends(Industry, _super);
-    function Industry(machinesQuantity, 
-    // Refere-se à quantidade de máquinas do local 
-    cep) {
-        var _this = _super.call(this, cep) || this;
-        _this.machinesQuantity = machinesQuantity;
+var Commerce_1 = require("./Commerce");
+var CommercialClient = /** @class */ (function (_super) {
+    __extends(CommercialClient, _super);
+    function CommercialClient(name, registrationNumber, floorsQuantity, cep) {
+        var _this = _super.call(this, floorsQuantity, cep) || this;
+        _this.CNPJ;
         return _this;
     }
-    Industry.prototype.getmachinesQuantity = function () {
-        return this.machinesQuantity;
+    CommercialClient.prototype.calculateBill = function () {
+        return this.consumedEnergy * 0.53;
     };
-    return Industry;
-}(Place_1.Place));
-exports.Industry = Industry;
+    CommercialClient.prototype.getCNPJ = function () {
+        return this.CNPJ;
+    };
+    return CommercialClient;
+}(Commerce_1.Commerce));
+exports.CommercialClient = CommercialClient;

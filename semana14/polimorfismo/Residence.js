@@ -23,6 +23,9 @@ var Residence = /** @class */ (function (_super) {
         _this.residentsQuantity = residentsQuantity;
         return _this;
     }
+    Residence.prototype.getResidentsQuantity = function () {
+        return this.residentsQuantity;
+    };
     return Residence;
 }(Place_1.Place));
 exports.Residence = Residence;

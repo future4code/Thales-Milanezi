@@ -23,6 +23,9 @@ var Commerce = /** @class */ (function (_super) {
         _this.floorsQuantity = floorsQuantity;
         return _this;
     }
+    Commerce.prototype.getfloorsQuantity = function () {
+        return this.floorsQuantity;
+    };
     return Commerce;
 }(Place_1.Place));
 exports.Commerce = Commerce;

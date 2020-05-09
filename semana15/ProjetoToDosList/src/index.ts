@@ -16,6 +16,32 @@ const connection = knex({
   }
 })
 
+const TaskList = async (): Promise<any> => {
+  await connection.raw(`
+ CREATE TABLE task(
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(255) NOT NULL,
+  status ENUM("aFazer", "Fazendo", "Feita"),
+  description VARCHAR(255) NOT NULL,
+  limitDate VARCHAR(255) NOT NULL, 
+  creatorUserId varchar(255) NOT NULL,
+  FOREIGN KEY (creatorUserId) REFERENCES User(id)
+)
+`)
+}
+
+// const ResponsibleTaskbyIdUser = async (task_id: string, user_responsible: string): Promise<any> => {
+//   await connection.raw(`
+//   CREATE TABLE task(
+//     task_id VARCHAR(255),
+//     user_responsible VARCHAR(255),
+//     FOREIGN KEY (task_id) REFERENCES TaskList(id),
+//     FOREIGN KEY (user_responsible) REFERENCES User(id)
+//   `)
+// }
+TaskList();
+
+
 const createUser = async (name: string, nickname: string, email: string): Promise<void> => {
   await connection.raw(`
   INSERT INTO User (name, nickname, email)
@@ -28,13 +54,23 @@ const createUser = async (name: string, nickname: string, email: string): Promis
   console.log("Usuario criado com sucesso, com o nome", name)
 }
 
-async function main(): Promise<void> {
-//  createUser("julia", "julinha", "juju92@gmail.com")
+const updateUser = async (name: string, nickname: string): Promise<void> => {
+  await connection
+    .update({
+      name: name,
+      nickname: nickname
+    })
+    .where(`${name}`)
 }
 
-const getUserById = async (id: number): Promise<any> =>{
-  const result = await connection.select("*").from("User").where({id}) 
+const getUserById = async (id: number): Promise<any> => {
+  const result = await connection.select("*").from("User").where({ id })
   return result
+}
+
+//Main function aqui 
+async function main(): Promise<void> {
+  //  TaskList();
 }
 
 //express a partir daqui
@@ -61,6 +97,7 @@ app.put("/user", async (req: Request, res: Response) => {
     })
   }
 })
+
 // perguntar depois sobre esse as unknown as number pra future4
 app.get("/user/:id", async (req: Request, res: Response): Promise<any> => {
   try {
@@ -68,6 +105,45 @@ app.get("/user/:id", async (req: Request, res: Response): Promise<any> => {
     res.status(200).send({
       user: result[0]
     })
+  } catch (err) {
+    res.status(400).send({
+      message: err.message
+    })
+  }
+})
+
+app.post("/user/edit", async (req: Request, res: Response): Promise<any> => {
+  try {
+    if (name) {
+      await updateUser(req.body.name, req.body.nickname)
+      res.sendStatus(200)
+    } else {
+      console.log("Erro ao tentar atualizar o usuário, preencha todos os campos e tente novamente")
+    }
+  } catch (err) {
+    res.status(400).send({
+      message: err.message
+    })
+  }
+})
+
+app.put("/task", async (req: Request, res: Response) => {
+  try {
+    const title = req.body.title
+    const status = req.body.status
+    const description = req.body.description
+    const limitDate = req.body.limitDate
+    const creatorUserId = req.body.creatorUserId
+
+    console.log("title:", title)
+    console.log("status:", status)
+    console.log("description:", description)
+    console.log("limitDate:", limitDate)
+    console.log("creatorUserId:", creatorUserId)
+
+    TaskList()
+
+    res.status(200).send()
   } catch (err) {
     res.status(400).send({
       message: err.message

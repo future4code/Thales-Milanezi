@@ -2,32 +2,24 @@ import express, { Request, Response } from "express";
 import dotenv from "dotenv";
 import { AddressInfo } from "net";
 import knex from 'knex'
+import {UserDataBase} from './data/UserDataBase'
 
 
 dotenv.config();
 
-const connection = knex({
-  client: "mysql",
-  connection: {
-    host: process.env.DB_HOST,
-    port: 3306,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_DATABASE_NAME,
-  },
-});
-
 const userTableName = "User";
 
-const createUser = async (id: string, email: string, password: string) => {
-  await connection
-    .insert({
-      id,
-      email,
-      password,
-    })
-    .into(userTableName);
-};
+async function usersTable(): Promise<void>{
+  await connection.raw(`
+  CREATE TABLE usersNewTable(
+    id VARCHAR(255) PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
+  )
+  `)
+  console.log("deu certo !")
+}
+usersTable();
 
 const app = express();
 

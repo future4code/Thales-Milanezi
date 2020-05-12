@@ -11,6 +11,7 @@ export class UserDatabase {
       database: process.env.DB_DATABASE_NAME,
     },
   });
+  
 
 	private static TABLE_NAME = "usersNewTable";
 

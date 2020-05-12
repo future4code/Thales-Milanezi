@@ -2,24 +2,10 @@ import express, { Request, Response } from "express";
 import dotenv from "dotenv";
 import { AddressInfo } from "net";
 import knex from 'knex'
-import {UserDataBase} from './data/UserDataBase'
+import {UserDatabase} from './data/UserDataBase'
 
 
 dotenv.config();
-
-const userTableName = "User";
-
-async function usersTable(): Promise<void>{
-  await connection.raw(`
-  CREATE TABLE usersNewTable(
-    id VARCHAR(255) PRIMARY KEY,
-    email VARCHAR(255) NOT NULL,
-    password VARCHAR(255) NOT NULL
-  )
-  `)
-  console.log("deu certo !")
-}
-usersTable();
 
 const app = express();
 

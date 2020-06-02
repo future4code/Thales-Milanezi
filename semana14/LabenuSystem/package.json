@@ -1,0 +1,23 @@
+{
+  "name": "proejtolabenusystem",
+  "version": "0.0.1",
+  "description": "projeto de back end para desenvolver o sistema da labenu",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "tsc ./src/index.ts ./src/LabenuClass.ts ./src/LabenuSchool.ts ./src/LabenuPeople.ts ./src/LabenuSchoolManager.ts ./src/LabenuStudents.ts ./src/LabenuTeachers.ts && node ./src/index.js "
+  },
+  "keywords": [
+    "typescript",
+    "backend",
+    "class",
+    "heranca",
+    "polimorfismo"
+  ],
+  "author": "thales milanezi",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^13.13.4",
+    "moment": "^2.24.0"
+  }
+}

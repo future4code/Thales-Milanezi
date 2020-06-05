@@ -4,6 +4,7 @@ import { IdGenerator } from "../services/idGenerator";
 import { BandDatabase } from "../data/BandDatabase";
 import { Band } from "../model/Band";
 
+
 export class BandBusiness{
   constructor(
     private bandDataBase: BandDatabase,
@@ -14,9 +15,9 @@ export class BandBusiness{
 
   public async bandSignup(
     name: string,
-    nickname: string,
-    description: string,
     email: string,
+    description: string,
+    nickname: string,
     password: string,
   ){
     const id = this.idGenerator.generate();
@@ -33,6 +34,7 @@ export class BandBusiness{
       ))
 
       const acessToken = this.authenticator.generateToken({id})
+
       return { acessToken}
   }
 }

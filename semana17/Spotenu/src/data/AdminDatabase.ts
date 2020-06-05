@@ -11,7 +11,8 @@ export class AdminDatabase extends BaseDatabase {
         dbResult.name,
         dbResult.email,
         dbResult.nickname,
-        dbResult.password
+        dbResult.password,
+        dbResult.role
       ))
   }
 
@@ -22,7 +23,8 @@ export class AdminDatabase extends BaseDatabase {
         name: admin.getName(),
         email: admin.getEmail(),
         nickname: admin.getNickname(),
-        password: admin.getPassword()
+        password: admin.getPassword(),
+        role: admin.getRole()
       })
       .into(AdminDatabase.TABLE_NAME)
   }
@@ -33,6 +35,5 @@ export class AdminDatabase extends BaseDatabase {
     .from(AdminDatabase.TABLE_NAME)
     .where({id})
     return this.toModel(result[0])
-    console.log(result)
   }
 }

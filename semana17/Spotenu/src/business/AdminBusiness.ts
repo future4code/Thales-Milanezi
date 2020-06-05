@@ -17,6 +17,7 @@ export class AdminBusiness {
     email: string,
     nickname: string,
     password: string,
+    role: string
   ) {
     const id = this.idGenerator.generate()
     const hashPassword = await this.hashGenerator.hash(password)
@@ -27,7 +28,8 @@ export class AdminBusiness {
         name,
         email,
         nickname,
-        hashPassword
+        hashPassword,
+        role
       ))
 
     const acessToken = this.authenticator.generateToken({

@@ -22,8 +22,8 @@ export class BandDatabase extends BaseDatabase {
         id: band.getId(),
         name: band.getName(),
         email: band.getEmail(),
-        description: band.getDescription(),
         nickname: band.getNickname(),
+        description: band.getDescription(),
         password: band.getPassword(),
       })
       .into(BandDatabase.TABLE_NAME)
@@ -35,6 +35,5 @@ export class BandDatabase extends BaseDatabase {
       .from(BandDatabase.TABLE_NAME)
       .where({ id })
     return this.toModel(result[0])
-    console.log(result)
   }
 }

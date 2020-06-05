@@ -4,7 +4,8 @@ export class Admin {
     private name: string,
     private email: string,
     private nickname: string,
-    private password: string
+    private password: string,
+    private role: string
   
   ) { }
 
@@ -26,5 +27,9 @@ export class Admin {
 
   public getPassword(): string {
     return this.password
+  }
+
+  public getRole(): string {
+    return this.role
   }
 }

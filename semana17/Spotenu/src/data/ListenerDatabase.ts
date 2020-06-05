@@ -2,7 +2,7 @@ import { BaseDatabase } from "./BaseDatabase";
 import { Listener } from "../model/Listener";
 
 export class ListenerDatabase extends BaseDatabase {
-  private static TABLE_NAME: string = ""
+  private static TABLE_NAME: string = "ListenerSpotenu"
 
   private toModel(dbResult: any): Listener | undefined {
     return (

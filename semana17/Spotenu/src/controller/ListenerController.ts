@@ -9,8 +9,8 @@ import { BaseDatabase } from '../data/BaseDatabase';
 export class ListenerController {
   private static listenerBusiness = new ListenerBusiness(
     new ListenerDatabase(),
-    new HashGenerator() as any,
-    new Authenticator() as any,
+    new Authenticator(),
+    new HashGenerator(),
     new IdGenerator()
   )
 

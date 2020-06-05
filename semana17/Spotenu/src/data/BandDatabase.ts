@@ -2,7 +2,7 @@ import { BaseDatabase } from "./BaseDatabase";
 import { Band } from '../model/Band'
 
 export class BandDatabase extends BaseDatabase {
-  private static TABLE_NAME: string = ""
+  private static TABLE_NAME: string = "BandSpotenu"
 
   private toModel(dbResult: any): Band {
     return (

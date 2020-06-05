@@ -9,8 +9,8 @@ import { BaseDatabase } from "../data/BaseDatabase";
 export class BandController {
   private static bandBusiness = new BandBusiness(
     new BandDatabase(),
-    new HashGenerator() as any,
-    new Authenticator() as any,
+    new Authenticator(),
+    new HashGenerator(),
     new IdGenerator()
   )
 

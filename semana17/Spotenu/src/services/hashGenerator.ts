@@ -1,11 +1,11 @@
 import bcrypt from "bcryptjs"; 
 
 export class HashGenerator{
-    public async hash(text: string): Promise<string>{
+    public hash = async (text: string): Promise<any> =>{
         const rounds: number = Number(process.env.BCRYPT_COST)
         const salt = await bcrypt.genSalt(rounds)
-        const hash = await bcrypt.hash(text, salt)
-        return hash
+        const result = await bcrypt.hash(text, salt)
+        return result
     }
 
     public compareHash = async (text: string, hash: string): Promise<boolean> => {

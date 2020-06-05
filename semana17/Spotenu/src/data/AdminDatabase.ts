@@ -2,7 +2,7 @@ import { BaseDatabase } from "./BaseDatabase";
 import { Admin } from "../model/Admin";
 
 export class AdminDatabase extends BaseDatabase {
-  private static TABLE_NAME: string = ""
+  private static TABLE_NAME: string = "AdminSpotenu"
 
   private toModel(dbResult: any): Admin | undefined {
     return (

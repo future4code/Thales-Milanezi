@@ -1,0 +1,24 @@
+1- 
+a) acredito que essa função testa varias possibilidades de erros e por possuir o handler é uma função que pode ser 
+usada no lambda.
+ela testa se o objeto usuário que vai receber nome, email , password, se algum desses campos estiver  vazio a função
+não vai deixar criar o usuário. Ela testa tambem se a senha possui pelo menos 6 caracteres.
+
+b) missing inputs
+c) missing email
+d) missing email
+e) invalid password
+f) missing inputs porque é user e não objeto info
+g) if (!user.email) {
+    return {
+      statusCode: 422,
+      body: JSON.stringify({ message: "Missing email" })
+    };
+  }
+f) {
+  "user": {
+			"name": "Astrodev",
+			"email": "astrodev@lbn.com.br",
+			"password": "123456"
+  }
+}

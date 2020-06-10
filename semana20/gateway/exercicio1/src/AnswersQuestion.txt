@@ -1,0 +1,26 @@
+exercicio 1
+
+Tarefa 2
+1) 
+  entrada = event
+  saida = true
+
+  entrada = undefined
+  saida = false (não existe)
+
+  entrada = null
+  saida = false (não existe)
+
+2) Porque o event.body vem em formato de string e não poderemos acessar suas propriedades desse modo
+então o parse realiza uma conversão dessa string em objeto para conseguirmo enfom utiliza-lo
+
+3) Ele retornará statusCode 200 quando as funções hasbody and hasquerys forem verdadeiras
+e para serem verdadeiras a lambda deve receber um body já porque seu length deve ser diferente de 0 e o 
+hasqueries tambem deve ser verdadeiro se existir o event.querystringParameters
+e não esquecer tambem de retornar o objeto para string nesse caso para a lambda conseguir ler
+
+4) Retornará statusCode 400 quando alguns dos parametro não forem passados , tanto o body quanto a query porque ele verifica se 
+o hasbody é falso e o hasquery é falso e se ambos forem falso ou se algum deles forem falso dará o erro missing input
+
+
+5) feito
